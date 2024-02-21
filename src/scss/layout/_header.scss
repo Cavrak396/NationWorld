@@ -1,0 +1,46 @@
+.header {
+  position: relative;
+  color: $white;
+  background-color: $black;
+}
+
+.header__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header__usertext {
+  font-size: 15px;
+  font-weight: $semi;
+}
+
+.header__search-form {
+  display: flex;
+  align-items: center;
+}
+
+.header__search-input,
+.header__search-button {
+  border-radius: 20px;
+  border: none;
+}
+
+.header__search-input {
+  font-size: 13px;
+  padding: 9px 9px 9px 17px;
+  margin-right: 5px;
+  width: 200px;
+}
+
+.header__search-button {
+  padding: 9px 17px;
+  font-weight: $semi;
+
+  @include hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: $regular;
+  }
+}

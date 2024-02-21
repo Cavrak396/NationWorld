@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script defer src="../js/controller.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>NationWorld</title>
+<script defer src="../js/script.js"></script><link href="../css/style.css" rel="stylesheet"></head>
+
+<body>
+    <header class="header">
+        <div class="wrap wrap--primary">
+            <div class="header__line">
+                <div class="header__user-info">
+                    <div class="header__usertext js-usertext"></div>
+                </div>
+                <form class="header__search-form">
+                    <input class="header__search-input" placeholder="Search country...">
+                    <button type="submit" class="header__search-button">Explore</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="usersetup js-usersetup" style="background-image: url('../images/usersetup_image.jpg');">
+            <div class="usersetup__holder">
+                <p class="usersetup__text">Hey, nice to meet you!
+                    The application needs your basic information for full quality &#58;&#41
+                </p>
+                <form class="usersetup__form">
+                    <input class="usersetup__name js-username" placeholder="What is your name? &#58;&#41">
+                    <input class="usersetup__country js-countryName" placeholder="Where are you from? &#58;&#41">
+                    <button type="submit" class="usersetup__button js-usersetup-submit">Let's start.</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
