@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script defer src="../js/controller.js"></script>
+    <script type="module" defer src="../js/controller.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -18,16 +18,23 @@
         <div class="wrap wrap--primary">
             <div class="header__line">
                 <div class="header__user-info">
-                    <div class="header__usertext js-usertext"></div>
+                    <div class="header__usertext js-usertext">Space for user text</div>
                 </div>
                 <form class="header__search-form">
-                    <input class="header__search-input" placeholder="Search country...">
-                    <button type="submit" class="header__search-button">Explore</button>
+                    <input class="header__search-input js-search-country" placeholder="Search country...">
+                    <button type="submit" class="header__search-button js-explore-btn">Explore</button>
                 </form>
             </div>
         </div>
     </header>
     <main>
+        <section class="nation">
+            <div class="nation__empty-holder">
+                <p class="nation__empty-text js-empty-sign">There is no nation, choose the desired nation &#58;&#41</p>
+            </div>
+            <div class="nation__informations"></div>
+        </section>
+        <!--  
         <div class="usersetup js-usersetup" style="background-image: url('../images/usersetup_image.jpg');">
             <div class="usersetup__holder">
                 <p class="usersetup__text">Hey, nice to meet you!
@@ -39,7 +46,7 @@
                     <button type="submit" class="usersetup__button js-usersetup-submit">Let's start.</button>
                 </form>
             </div>
-        </div>
+        </div> -->
     </main>
 </body>
 

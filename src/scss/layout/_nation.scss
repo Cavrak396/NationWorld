@@ -1,0 +1,51 @@
+.nation {
+  background-color: $lightBlack;
+  height: 100svh;
+}
+
+.nation__empty-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 287px;
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-size: 17px;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 25px;
+}
+
+.nation__informations {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nation__informations-join {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nation__informations-flag {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+
+  @include background;
+
+  @include after {
+    @include darker;
+    background-color: $black;
+    opacity: 0.5;
+  }
+}
+
+.nation__informations-title {
+  font-size: 45px;
+  font-weight: $semi;
+}
+
+.nation__informations-region {
+  font-size: 20px;
+}
