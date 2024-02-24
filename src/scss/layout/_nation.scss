@@ -1,6 +1,7 @@
 .nation {
   background-color: $lightBlack;
-  height: 100svh;
+  min-height: 100vh;
+  color: $white;
 }
 
 .nation__empty-text {
@@ -17,13 +18,17 @@
 }
 
 .nation__informations {
-  max-width: 1000px;
+  max-width: 890px;
   margin: 0 auto;
+}
+
+.nation__informations-text {
+  padding: 20px 60px;
 }
 
 .nation__informations-join {
   max-width: 300px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   text-align: center;
 }
 
@@ -44,8 +49,23 @@
 .nation__informations-title {
   font-size: 45px;
   font-weight: $semi;
+  margin-bottom: 10px;
+}
+
+.nation__informations-tag {
+  line-height: 29px;
 }
 
 .nation__informations-region {
   font-size: 20px;
+  opacity: 0.7;
+}
+
+.nation__information-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nation__informations-item {
+  margin-bottom: 15px;
 }

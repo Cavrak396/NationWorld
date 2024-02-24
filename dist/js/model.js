@@ -6,8 +6,22 @@ export const loadCountryInfo = async function (countryName) {
     );
     const countryData = await country.json();
     const countryInfo = countryData[0];
+
+    // Get neigbour
+    const neighbours = await Promise.all(
+      countryInfo.borders.map(async (border) => {
+        const neighbourResponse = await fetch(
+          `https://restcountries.com/v3.1/alpha/${border}`
+        );
+        const neighbourData = await neighbourResponse.json();
+        return neighbourData[0].name.common;
+      })
+    );
+
+    countryInfo.neighbours = neighbours;
+
     return countryInfo;
   } catch (err) {
-    alert(err);
+    console.log(err);
   }
 };
