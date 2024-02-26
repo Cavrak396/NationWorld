@@ -115,24 +115,34 @@ class CountryInfoView extends View {
     </li>
 </ul>
 </div>       
-       <h3 class="nation__information-heading">
-       Neighbours:
-       </h3>
-       <ul class="nation__informations-list">
-       <li class="nation__informations-item">
-         ${data.neighbours.map((neighbour) => {
-           return `
-           <a href="#${neighbour}" class="nation__information-neighbour"> ${neighbour}</a>
-           `;
-         })}
-      </li>
-      </ul>
+    <h3 class="nation__information-heading">
+    Neighbours:
+    </h3>
+    <ul class="nation__informations-neighbourList">
+      ${this._loadNeighbour(data)}
+    </ul>
     `;
 
     this.parentEl.innerHTML = "";
     this.parentEl.style.display = "block";
     this.emptySign.style.display = "none";
     this.parentEl.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  _loadNeighbour(data) {
+    return data.neighbours
+      ? data.neighbours
+          .map((neighbour) => {
+            return `
+      <li class="nation__informations-neighbourItem js-neighbour">
+        <a href="#${neighbour.name.common}" class="nation__informations-neighbour"> 
+          <div class="nation__inofmartions-neighbourFlag" style="background-image: url('${neighbour.flags.png}')"></div>
+          <span class="nation__informations-neighbourName">${neighbour.name.common}</span>
+        </a>
+      </li>`;
+          })
+          .join("")
+      : "<span>No neighbours found!</span>";
   }
 }
 

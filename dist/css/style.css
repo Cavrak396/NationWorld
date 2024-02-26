@@ -411,3 +411,48 @@ button {
 .nation__informations-item {
   margin-bottom: 15px;
 }
+
+.nation__informations-neighbourList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nation__informations-neighbourItem {
+  margin: 20px;
+  max-width: calc(20% - 20px);
+  flex: 1 1 calc(20% - 20px);
+}
+
+.nation__informations-neighbour {
+  display: block;
+  color: rgb(255, 255, 255);
+}
+.nation__informations-neighbour:hover {
+  transform: scale(1.1);
+  transition: 0.2s all ease-in-out;
+}
+
+.nation__inofmartions-neighbourFlag {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nation__inofmartions-neighbourFlag::after {
+  background-color: rgb(33, 33, 33);
+  opacity: 0.2;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
+
+.nation__informations-neighbourName {
+  line-height: 23px;
+}

@@ -2,11 +2,13 @@ import * as model from "./model.js";
 import searchView from "./view/searchView.js";
 import countryInfoView from "./view/countryInfoView.js";
 
-const loadCountry = async function (data) {
+const loadCountry = async function () {
   try {
-    data = searchView._loadCountry();
-    if (!data) return;
-    const country = await model.loadCountryInfo(data);
+    const id = window.location.hash.slice(1);
+    console.log(id);
+    //data = searchView._loadCountry();
+    if (!id) return;
+    const country = await model.loadCountryInfo(id);
 
     searchView._checkSearch(country);
     countryInfoView._generateMarkup(country);
@@ -19,6 +21,7 @@ const loadCountry = async function (data) {
 
 const init = function () {
   searchView._getName(loadCountry);
+  searchView._addHandlerRender(loadCountry);
 };
 
 init();

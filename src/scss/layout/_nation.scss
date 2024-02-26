@@ -69,3 +69,44 @@
 .nation__informations-item {
   margin-bottom: 15px;
 }
+
+.nation__informations-neighbourList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nation__informations-neighbourItem {
+  margin: 20px;
+  max-width: calc(20% - 20px);
+  flex: 1 1 calc(20% - 20px);
+}
+
+.nation__informations-neighbour {
+  display: block;
+  color: $white;
+
+  @include hover {
+    transform: scale(1.1);
+    transition: $regular;
+  }
+}
+
+.nation__inofmartions-neighbourFlag {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 10px;
+
+  @include background;
+
+  @include after {
+    background-color: $black;
+    opacity: 0.2;
+
+    @include darker;
+  }
+}
+
+.nation__informations-neighbourName {
+  line-height: 23px;
+}
