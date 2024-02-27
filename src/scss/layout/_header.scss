@@ -1,7 +1,10 @@
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   color: $white;
   background-color: $black;
+  z-index: 20;
 }
 
 .header__line {
@@ -16,9 +19,56 @@
   font-weight: $semi;
 }
 
+.header__right-bar {
+  display: flex;
+  align-items: center;
+}
+
+.header__bookmarks {
+  position: relative;
+}
+
+.header__bookmarks-result {
+  position: absolute;
+  background-color: $white;
+  width: 300px;
+  min-height: 150px;
+  left: 0;
+  top: 30px;
+  border-radius: 15px;
+  padding: 10px 12px;
+  opacity: 0;
+  display: none;
+}
+
+// Move letter
+.showBookmark {
+  opacity: 1;
+  display: block;
+}
+
+.header__bookmarks-decoration {
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  background-color: $white;
+  width: 30px;
+  height: 15px;
+  transform: rotate(43deg);
+}
+
+.header__bookmarks-tag {
+  position: relative;
+  color: $black;
+  font-size: 14px;
+  z-index: 15;
+  font-weight: $semi;
+}
+
 .header__search-form {
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 
 .header__search-input,

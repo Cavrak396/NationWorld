@@ -222,7 +222,7 @@ button {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(16, 12, 20);
   top: 0;
   left: 0;
   background-position: center;
@@ -237,7 +237,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: 15;
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(16, 12, 20);
   opacity: 0.3;
 }
 
@@ -289,9 +289,12 @@ button {
 }
 
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   color: rgb(255, 255, 255);
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(16, 12, 20);
+  z-index: 20;
 }
 
 .header__line {
@@ -306,9 +309,55 @@ button {
   font-weight: 600;
 }
 
+.header__right-bar {
+  display: flex;
+  align-items: center;
+}
+
+.header__bookmarks {
+  position: relative;
+}
+
+.header__bookmarks-result {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  min-height: 150px;
+  left: 0;
+  top: 30px;
+  border-radius: 15px;
+  padding: 10px 12px;
+  opacity: 0;
+  display: none;
+}
+
+.showBookmark {
+  opacity: 1;
+  display: block;
+}
+
+.header__bookmarks-decoration {
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  background-color: rgb(255, 255, 255);
+  width: 30px;
+  height: 15px;
+  transform: rotate(43deg);
+}
+
+.header__bookmarks-tag {
+  position: relative;
+  color: rgb(16, 12, 20);
+  font-size: 14px;
+  z-index: 15;
+  font-weight: 600;
+}
+
 .header__search-form {
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 
 .header__search-input,
@@ -335,7 +384,7 @@ button {
 }
 
 .nation {
-  background-color: rgb(39, 39, 39);
+  background-color: rgba(16, 12, 20, 0.9);
   min-height: 100vh;
   color: rgb(255, 255, 255);
 }
@@ -384,7 +433,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: 15;
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(16, 12, 20);
   opacity: 0.5;
 }
 
@@ -399,8 +448,14 @@ button {
 }
 
 .nation__informations-region {
+  display: block;
   font-size: 20px;
   opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.nation__informations-save {
+  margin: 0 auto;
 }
 
 .nation__information-heading {
@@ -437,12 +492,13 @@ button {
   position: relative;
   min-height: 50px;
   margin-bottom: 10px;
+  border-radius: 20px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .nation__inofmartions-neighbourFlag::after {
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(16, 12, 20);
   opacity: 0.2;
   position: absolute;
   content: "";
@@ -453,6 +509,19 @@ button {
   z-index: 15;
 }
 
+.nation__information-neigbourText {
+  padding: 0 10px;
+}
+
 .nation__informations-neighbourName {
   line-height: 23px;
+}
+
+button {
+  border: none;
+  background: none;
+  color: rgb(255, 255, 255);
+}
+button:hover {
+  cursor: pointer;
 }

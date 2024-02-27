@@ -1,5 +1,11 @@
 import { API_URL, CODE_API } from "./config.js";
 
+export const bookmarkInfo = {
+  flag: "",
+  name: "",
+  region: "",
+};
+
 // Calling REST countries API
 export const loadCountryInfo = async function (countryName) {
   try {

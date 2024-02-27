@@ -12,6 +12,7 @@ class CountryInfoView extends View {
         <div class="nation__informations-join">
             <h2 class="nation__informations-title">${data.name.common}</h2>
             <span class="nation__informations-region">${data.region}</span>
+            <button type="button" class="nation__informations-save js-bookmark-save">Save</button>
     </div>
     <div class="nation__informations-facts">
     <h3 class="nation__information-heading">
@@ -137,7 +138,9 @@ class CountryInfoView extends View {
       <li class="nation__informations-neighbourItem js-neighbour">
         <a href="#${neighbour.name.common}" class="nation__informations-neighbour"> 
           <div class="nation__inofmartions-neighbourFlag" style="background-image: url('${neighbour.flags.png}')"></div>
+          <div class="nation__information-neigbourText">
           <span class="nation__informations-neighbourName">${neighbour.name.common}</span>
+          </div>
         </a>
       </li>`;
           })

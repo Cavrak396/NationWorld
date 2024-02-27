@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import searchView from "./view/searchView.js";
 import countryInfoView from "./view/countryInfoView.js";
+import bookmarksView from "./view/bookmarksView.js";
 
 const loadCountry = async function () {
   try {
@@ -18,6 +19,12 @@ const loadCountry = async function () {
     throw err;
   }
 };
+
+const hanldeBookmark = function () {
+  bookmarksView._showBookmarks();
+};
+
+hanldeBookmark();
 
 const init = function () {
   searchView._getName(loadCountry);
