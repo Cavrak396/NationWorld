@@ -347,11 +347,69 @@ button {
 }
 
 .header__bookmarks-tag {
+  display: block;
   position: relative;
   color: rgb(16, 12, 20);
   font-size: 14px;
   z-index: 15;
   font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.header__bookmarks-saved {
+  display: flex;
+  align-items: center;
+}
+
+.header__bookmarks-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 15px auto;
+  max-width: 90%;
+  flex: 1 1 90%;
+  border-bottom: 1px solid rgb(16, 12, 20);
+  padding: 0 20px 9px 20px;
+}
+.header__bookmarks-link:hover {
+  opacity: 0.7;
+  transition: 0.2s all ease-in-out;
+}
+
+.header__bookmarks-delete {
+  max-width: 10%;
+  flex: 1 1 10%;
+  color: rgb(16, 12, 20);
+  font-size: 20px;
+  font-weight: 600;
+}
+.header__bookmarks-delete:hover {
+  cursor: pointer;
+  opacity: 0.2;
+  transition: 0.2s all ease-in-out;
+}
+
+.header__bookmarks-flag {
+  max-width: 50px;
+  flex: 1 1 50px;
+  min-height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__bookmarks-country,
+.header__bookmarks-region {
+  display: block;
+}
+
+.header__bookmarks-country {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.header__bookmarks-region {
+  font-size: 14px;
 }
 
 .header__search-form {

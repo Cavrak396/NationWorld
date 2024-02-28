@@ -4,19 +4,23 @@ class CountryInfoView extends View {
   _generateMarkup(data) {
     this.data = data;
     const markup = `
-    <div class="nation__informations-flag" style="background-image: url('${
+    <div class="nation__informations-flag js-country-flag" style="background-image: url('${
       data.flags.png
     }')">
     </div>
     <div class="nation__informations-text">
         <div class="nation__informations-join">
-            <h2 class="nation__informations-title">${data.name.common}</h2>
-            <span class="nation__informations-region">${data.region}</span>
+            <h2 class="nation__informations-title js-country-title">${
+              data.name.common
+            }</h2>
+            <span class="nation__informations-region js-country-region">${
+              data.region
+            }</span>
             <button type="button" class="nation__informations-save js-bookmark-save">Save</button>
     </div>
     <div class="nation__informations-facts">
     <h3 class="nation__information-heading">
-        Geographical information about Serbia that you should know.
+        Geographical information about ${data.name.common} that you should know.
     </h3>
     <ul class="nation__informations-list">
         <li class="nation__informations-item">
@@ -136,7 +140,7 @@ class CountryInfoView extends View {
           .map((neighbour) => {
             return `
       <li class="nation__informations-neighbourItem js-neighbour">
-        <a href="#${neighbour.name.common}" class="nation__informations-neighbour"> 
+        <a href="#${neighbour.name.common}" class="nation__informations-neighbour js-neighbour"> 
           <div class="nation__inofmartions-neighbourFlag" style="background-image: url('${neighbour.flags.png}')"></div>
           <div class="nation__information-neigbourText">
           <span class="nation__informations-neighbourName">${neighbour.name.common}</span>
@@ -146,6 +150,15 @@ class CountryInfoView extends View {
           })
           .join("")
       : "<span>No neighbours found!</span>";
+  }
+
+  _reloadNeigbour() {
+    this.parentEl.addEventListener("click", function (event) {
+      const clickedNeighbour = event.target.closest(".js-neighbour");
+      if (!clickedNeighbour) return;
+
+      location.reload();
+    });
   }
 }
 

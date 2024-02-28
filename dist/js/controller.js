@@ -14,17 +14,21 @@ const loadCountry = async function () {
     searchView._checkSearch(country);
     countryInfoView._generateMarkup(country);
 
+    handleBookmark();
+
     console.log(country);
   } catch (err) {
     throw err;
   }
 };
 
-const hanldeBookmark = function () {
+// Bookmark
+const handleBookmark = function () {
   bookmarksView._showBookmarks();
+  bookmarksView._saveBookmark();
+  countryInfoView._reloadNeigbour();
+ // bookmarksView._removeBookmark()
 };
-
-hanldeBookmark();
 
 const init = function () {
   searchView._getName(loadCountry);
