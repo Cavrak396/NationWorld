@@ -575,6 +575,11 @@ button {
   line-height: 23px;
 }
 
+.nation__map {
+  width: 100%;
+  min-height: 500px;
+}
+
 button {
   border: none;
   background: none;

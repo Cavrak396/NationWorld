@@ -2,6 +2,7 @@ import * as model from "./model.js";
 import searchView from "./view/searchView.js";
 import countryInfoView from "./view/countryInfoView.js";
 import bookmarksView from "./view/bookmarksView.js";
+import mapView from "./view/mapView.js";
 
 const loadCountry = async function () {
   try {
@@ -13,6 +14,8 @@ const loadCountry = async function () {
 
     searchView._checkSearch(country);
     countryInfoView._generateMarkup(country);
+
+    mapView._getCountryCoords(country);
 
     handleBookmark();
 
@@ -26,8 +29,7 @@ const loadCountry = async function () {
 const handleBookmark = function () {
   bookmarksView._showBookmarks();
   bookmarksView._saveBookmark();
-  countryInfoView._reloadNeigbour();
- // bookmarksView._removeBookmark()
+  // bookmarksView._removeBookmark()
 };
 
 const init = function () {

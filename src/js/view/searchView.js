@@ -31,6 +31,9 @@ class SearchView extends View {
       this.parentEl.style.display = "none";
       this.emptySign.style.display = "block";
       this.emptySign.textContent = `Country with this name doesn't exist! Try another :)`;
+      this.mapField.style.display = "none";
+    } else {
+      this.mapField.style.display = "block";
     }
   }
 

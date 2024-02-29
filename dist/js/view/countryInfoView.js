@@ -151,15 +151,6 @@ class CountryInfoView extends View {
           .join("")
       : "<span>No neighbours found!</span>";
   }
-
-  _reloadNeigbour() {
-    this.parentEl.addEventListener("click", function (event) {
-      const clickedNeighbour = event.target.closest(".js-neighbour");
-      if (!clickedNeighbour) return;
-
-      location.reload();
-    });
-  }
 }
 
 export default new CountryInfoView();

@@ -55,7 +55,7 @@ class BookmarkView extends View {
     const savedItems = document.querySelectorAll(".js-saved-item");
     savedItems.forEach((savedItem) => {
       const deleteBtn = savedItem.querySelector(".js-delete-bookmark");
-      deleteBtn.addEventListener("click", (e) => {
+      deleteBtn.addEventListener("click", () => {
         const bookmarkName = savedItem.querySelector(
           ".js-bookmarks-country"
         ).textContent;
