@@ -1,14 +1,21 @@
 import * as model from "./model.js";
+//import userSetupView from "./view/userSetupView.js";
 import searchView from "./view/searchView.js";
 import countryInfoView from "./view/countryInfoView.js";
 import bookmarksView from "./view/bookmarksView.js";
 import mapView from "./view/mapView.js";
 
+/*const passUserSetup = function () {
+  userSetupView._getUserInfo();
+};
+
+passUserSetup();*/
+
 const loadCountry = async function () {
   try {
     const id = window.location.hash.slice(1);
     console.log(id);
-    //data = searchView._loadCountry();
+
     if (!id) return;
     const country = await model.loadCountryInfo(id);
 

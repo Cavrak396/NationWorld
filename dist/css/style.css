@@ -225,6 +225,7 @@ button {
   background-color: rgb(16, 12, 20);
   top: 0;
   left: 0;
+  z-index: 20;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -303,10 +304,20 @@ button {
   align-items: center;
   padding: 20px 0;
 }
+@media screen and (max-width: 767px) {
+  .header__line {
+    flex-direction: column;
+  }
+}
 
 .header__usertext {
   font-size: 15px;
   font-weight: 600;
+}
+@media screen and (max-width: 767px) {
+  .header__usertext {
+    margin-bottom: 20px;
+  }
 }
 
 .header__right-bar {
@@ -318,17 +329,31 @@ button {
   position: relative;
 }
 
+.header__bookmarks-icon {
+  max-width: 30px;
+  max-height: 30px;
+}
+.header__bookmarks-icon:hover {
+  transition: 0.2s all ease-in-out;
+  transform: rotate(180deg);
+}
+
 .header__bookmarks-result {
   position: absolute;
   background-color: rgb(255, 255, 255);
   width: 300px;
   min-height: 150px;
   left: 0;
-  top: 30px;
+  top: 45px;
   border-radius: 15px;
   padding: 10px 12px;
   opacity: 0;
   display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__bookmarks-result {
+    width: 240px;
+  }
 }
 
 .showBookmark {
@@ -423,6 +448,12 @@ button {
   border-radius: 20px;
   border: none;
 }
+@media screen and (max-width: 767px) {
+  .header__search-input,
+  .header__search-button {
+    font-size: 12px;
+  }
+}
 
 .header__search-input {
   font-size: 13px;
@@ -430,10 +461,17 @@ button {
   margin-right: 5px;
   width: 200px;
 }
+@media screen and (max-width: 767px) {
+  .header__search-input {
+    width: 140px;
+  }
+}
 
 .header__search-button {
   padding: 9px 17px;
   font-weight: 600;
+  background-color: rgb(255, 255, 255);
+  color: rgb(16, 12, 20);
 }
 .header__search-button:hover {
   cursor: pointer;
@@ -494,11 +532,21 @@ button {
   background-color: rgb(16, 12, 20);
   opacity: 0.5;
 }
+@media screen and (max-width: 767px) {
+  .nation__informations-flag {
+    min-height: 250px;
+  }
+}
 
 .nation__informations-title {
   font-size: 45px;
   font-weight: 600;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  .nation__informations-title {
+    font-size: 30px;
+  }
 }
 
 .nation__informations-tag {
@@ -511,14 +559,41 @@ button {
   opacity: 0.7;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 767px) {
+  .nation__informations-region {
+    font-size: 15px;
+  }
+}
 
 .nation__informations-save {
   margin: 0 auto;
 }
 
-.nation__information-heading {
+.nation__informations-heading {
   text-align: center;
   margin-bottom: 50px;
+  line-height: 25px;
+}
+@media screen and (max-width: 767px) {
+  .nation__informations-heading {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nation__informations-facts {
+    margin-bottom: 40px;
+  }
+}
+
+.nation__informations-fact {
+  line-height: 20px;
+}
+@media screen and (max-width: 767px) {
+  .nation__informations-fact {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
 }
 
 .nation__informations-item {
@@ -533,8 +608,15 @@ button {
 
 .nation__informations-neighbourItem {
   margin: 20px;
-  max-width: calc(20% - 20px);
-  flex: 1 1 calc(20% - 20px);
+  max-width: calc(20% - 40px);
+  flex: 1 1 calc(20% - 40px);
+}
+@media screen and (max-width: 767px) {
+  .nation__informations-neighbourItem {
+    margin: 10px;
+    max-width: calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px);
+  }
 }
 
 .nation__informations-neighbour {
@@ -558,6 +640,7 @@ button {
 .nation__inofmartions-neighbourFlag::after {
   background-color: rgb(16, 12, 20);
   opacity: 0.2;
+  border-radius: 20px;
   position: absolute;
   content: "";
   top: 0;
@@ -573,6 +656,12 @@ button {
 
 .nation__informations-neighbourName {
   line-height: 23px;
+}
+@media screen and (max-width: 767px) {
+  .nation__informations-neighbourName {
+    line-height: 19px;
+    font-size: 14px;
+  }
 }
 
 .nation__map {

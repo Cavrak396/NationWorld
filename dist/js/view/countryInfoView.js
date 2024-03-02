@@ -19,7 +19,7 @@ class CountryInfoView extends View {
             <button type="button" class="nation__informations-save js-bookmark-save">Save</button>
     </div>
     <div class="nation__informations-facts">
-    <h3 class="nation__information-heading">
+    <h3 class="nation__informations-heading">
         Geographical information about ${data.name.common} that you should know.
     </h3>
     <ul class="nation__informations-list">
@@ -120,12 +120,14 @@ class CountryInfoView extends View {
     </li>
 </ul>
 </div>       
-    <h3 class="nation__information-heading">
+<div class=""nation__informations-neighbours>
+    <h3 class="nation__informations-heading">
     Neighbours:
     </h3>
     <ul class="nation__informations-neighbourList">
       ${this._loadNeighbour(data)}
     </ul>
+    </div>
     `;
 
     this.parentEl.innerHTML = "";

@@ -34,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/Cavrak396/NationWorld/issues"
   },
-  "homepage": "https://github.com/Cavrak396/NationWorld#readme"
+  "homepage": "https://github.com/Cavrak396/NationWorld#readme",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
 }

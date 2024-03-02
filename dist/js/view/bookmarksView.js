@@ -2,7 +2,6 @@ import View from "./view.js";
 
 class BookmarkView extends View {
   bookmarkBtn = document.querySelector(".js-bookmark-saved");
-  results = document.querySelector(".js-bookmark-results");
   bookmarksContainer = document.querySelector(".js-bookmark-list");
   savedBookmarks = [];
 
@@ -31,24 +30,29 @@ class BookmarkView extends View {
           region: region,
           flagImageUrl: flagImageUrl,
         };
-        this.savedBookmarks.push(newBookmark);
 
-        const markup = `
+        this.savedBookmarks.push(newBookmark);
+        this._renderBookmark(newBookmark);
+        this._removeBookmark(); // chnage letter to controller
+      }
+    });
+  }
+
+  _renderBookmark(bookmark) {
+    const markup = `
         <li class="header__bookmarks-saved js-saved-item">
-            <a href="#${newBookmark.name}" class="header__bookmarks-link">
-                <div class="header__bookmarks-flag" style="background-image: url(${newBookmark.flagImageUrl})"></div>
+            <a href="#${bookmark.name}" class="header__bookmarks-link">
+                <div class="header__bookmarks-flag" style="background-image: url(${bookmark.flagImageUrl})"></div>
                 <div class="header__bookmarks-tags">
-                    <span class="header__bookmarks-country js-bookmarks-country">${newBookmark.name}</span>
-                    <span class="header__bookmarks-region">${newBookmark.region}</span>
+                    <span class="header__bookmarks-country js-bookmarks-country">${bookmark.name}</span>
+                    <span class="header__bookmarks-region">${bookmark.region}</span>
                 </div>
             </a>
             <span class="header__bookmarks-delete js-delete-bookmark">x</span>
         </li>
     `;
-        this.bookmarksContainer.insertAdjacentHTML("afterbegin", markup);
-        this._removeBookmark(); // chnage letter to controller
-      }
-    });
+
+    this.bookmarksContainer.insertAdjacentHTML("afterbegin", markup);
   }
 
   _removeBookmark() {

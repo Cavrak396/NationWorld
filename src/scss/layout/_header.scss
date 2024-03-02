@@ -12,11 +12,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+
+  @include phone {
+    flex-direction: column;
+  }
 }
 
 .header__usertext {
   font-size: 15px;
   font-weight: $semi;
+
+  @include phone {
+    margin-bottom: 20px;
+  }
 }
 
 .header__right-bar {
@@ -28,17 +36,31 @@
   position: relative;
 }
 
+.header__bookmarks-icon {
+  max-width: 30px;
+  max-height: 30px;
+
+  @include hover {
+    transition: $regular;
+    transform: rotate(180deg);
+  }
+}
+
 .header__bookmarks-result {
   position: absolute;
   background-color: $white;
   width: 300px;
   min-height: 150px;
   left: 0;
-  top: 30px;
+  top: 45px;
   border-radius: 15px;
   padding: 10px 12px;
   opacity: 0;
   display: none;
+
+  @include phone {
+    width: 240px;
+  }
 }
 
 // Move letter
@@ -134,6 +156,10 @@
 .header__search-button {
   border-radius: 20px;
   border: none;
+
+  @include phone {
+    font-size: 12px;
+  }
 }
 
 .header__search-input {
@@ -141,11 +167,17 @@
   padding: 9px 9px 9px 17px;
   margin-right: 5px;
   width: 200px;
+
+  @include phone {
+    width: 140px;
+  }
 }
 
 .header__search-button {
   padding: 9px 17px;
   font-weight: $semi;
+  background-color: $white;
+  color: $black;
 
   @include hover {
     cursor: pointer;

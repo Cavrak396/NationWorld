@@ -27,14 +27,12 @@ class SearchView extends View {
   }
 
   _checkSearch(data) {
-    if (!data) {
-      this.parentEl.style.display = "none";
-      this.emptySign.style.display = "block";
-      this.emptySign.textContent = `Country with this name doesn't exist! Try another :)`;
-      this.mapField.style.display = "none";
-    } else {
-      this.mapField.style.display = "block";
-    }
+    this.parentEl.style.display = data ? "block" : "none";
+    this.mapField.style.display = data ? "block" : "none";
+    this.emptySign.textContent = data
+      ? ""
+      : `Country with this name doesn't exist! Try another :)`;
+    this.emptySign.style.display = data ? "none" : "block";
   }
 
   _clear() {

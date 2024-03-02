@@ -17,7 +17,6 @@ class MapView {
             `https://www.google.com/maps/@${latitude},${longitude},13z?entry=ttu`
           );
 
-          // Provjerava postoji li već mapa, ako ne postoji, inicijalizira novu mapu
           if (!this.map) {
             this.map = L.map("map").setView([latitude, longitude], 8);
 
