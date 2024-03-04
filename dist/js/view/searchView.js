@@ -5,8 +5,21 @@ class SearchView extends View {
   searchBar = document.querySelector(".js-search-country");
   neighbour = document.querySelector(".js-neighbour");
 
-  _addHandlerRender(handler) {
+  /*_addHandlerRender(handler) {
     ["hashchange", "load"].forEach((e) => window.addEventListener(e, handler));
+  }*/
+
+  _addHandlerRender(handler) {
+    const events = ["hashchange", "load"];
+
+    // Dodajemo "hashchange" događaj
+    window.addEventListener("hashchange", () => {
+      location.reload();
+      handler();
+    });
+
+    // Dodajemo "load" događaj
+    window.addEventListener("load", handler);
   }
 
   _loadCountry() {

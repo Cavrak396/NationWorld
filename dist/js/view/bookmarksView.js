@@ -3,12 +3,16 @@ import View from "./view.js";
 class BookmarkView extends View {
   bookmarkBtn = document.querySelector(".js-bookmark-saved");
   bookmarksContainer = document.querySelector(".js-bookmark-list");
-  savedBookmarks = [];
+  savedBookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
   _showBookmarks() {
     this.bookmarkBtn.addEventListener("click", () => {
       this.results.classList.toggle("showBookmark");
     });
+  }
+
+  _showSavedBookmarks() {
+    this.savedBookmarks.forEach((bookmark) => this._renderBookmark(bookmark));
   }
 
   _saveBookmark() {
@@ -25,15 +29,29 @@ class BookmarkView extends View {
 
     bookmarkSave.addEventListener("click", () => {
       if (!this.savedBookmarks.some((bookmark) => bookmark.name === name)) {
-        const newBookmark = {
-          name: name,
-          region: region,
-          flagImageUrl: flagImageUrl,
-        };
-
+        const newBookmark = { name, region, flagImageUrl };
         this.savedBookmarks.push(newBookmark);
         this._renderBookmark(newBookmark);
-        this._removeBookmark(); // chnage letter to controller
+        this._saveBookmarks();
+      }
+    });
+  }
+
+  _removeBookmark() {
+    this.bookmarksContainer.addEventListener("click", (event) => {
+      const deleteBtn = event.target.closest(".js-delete-bookmark");
+      if (deleteBtn) {
+        const savedItem = deleteBtn.closest(".js-saved-item");
+        const bookmarkName = savedItem.querySelector(
+          ".js-bookmarks-country"
+        ).textContent;
+
+        savedItem.remove();
+
+        this.savedBookmarks = this.savedBookmarks.filter(
+          (bookmark) => bookmark.name !== bookmarkName
+        );
+        this._saveBookmarks();
       }
     });
   }
@@ -55,24 +73,8 @@ class BookmarkView extends View {
     this.bookmarksContainer.insertAdjacentHTML("afterbegin", markup);
   }
 
-  _removeBookmark() {
-    const savedItems = document.querySelectorAll(".js-saved-item");
-    savedItems.forEach((savedItem) => {
-      const deleteBtn = savedItem.querySelector(".js-delete-bookmark");
-      deleteBtn.addEventListener("click", () => {
-        const bookmarkName = savedItem.querySelector(
-          ".js-bookmarks-country"
-        ).textContent;
-
-        // Remove element from DOM
-        savedItem.remove();
-
-        // Removing element with same name
-        this.savedBookmarks = this.savedBookmarks.filter(
-          (bookmark) => bookmark.name !== bookmarkName
-        );
-      });
-    });
+  _saveBookmarks() {
+    localStorage.setItem("bookmarks", JSON.stringify(this.savedBookmarks));
   }
 }
 

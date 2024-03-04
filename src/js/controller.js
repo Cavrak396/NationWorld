@@ -2,7 +2,7 @@ import * as model from "./model.js";
 //import userSetupView from "./view/userSetupView.js";
 import searchView from "./view/searchView.js";
 import countryInfoView from "./view/countryInfoView.js";
-import bookmarksView from "./view/bookmarksView.js";
+import bookmarkView from "./view/bookmarksView.js";
 import mapView from "./view/mapView.js";
 
 /*const passUserSetup = function () {
@@ -24,7 +24,7 @@ const loadCountry = async function () {
 
     mapView._getCountryCoords(country);
 
-    handleBookmark();
+    handleBookmarkAction();
 
     console.log(country);
   } catch (err) {
@@ -33,10 +33,11 @@ const loadCountry = async function () {
 };
 
 // Bookmark
-const handleBookmark = function () {
-  bookmarksView._showBookmarks();
-  bookmarksView._saveBookmark();
-  // bookmarksView._removeBookmark()
+const handleBookmarkAction = function () {
+  bookmarkView._showBookmarks();
+  bookmarkView._saveBookmark();
+  bookmarkView._showSavedBookmarks();
+  bookmarkView._removeBookmark();
 };
 
 const init = function () {

@@ -349,6 +349,7 @@ button {
   padding: 10px 12px;
   opacity: 0;
   display: none;
+  transition: all 0.5s 0.2s;
 }
 @media screen and (max-width: 767px) {
   .header__bookmarks-result {

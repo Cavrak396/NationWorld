@@ -4,5 +4,4 @@ export default class View {
   emptySign = document.querySelector(".js-empty-sign");
   mapField = document.querySelector("#map");
   results = document.querySelector(".js-bookmark-results");
-  
 }

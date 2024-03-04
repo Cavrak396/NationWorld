@@ -1,9 +1,7 @@
 class MapView {
-  // Definiranje varijabli za mapu i podatke
   map = null;
   data = null;
 
-  // Metoda za dobivanje geolokacije
   _getCountryCoords(data) {
     this.data = data;
     console.log(data);
