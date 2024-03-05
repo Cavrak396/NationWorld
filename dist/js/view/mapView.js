@@ -28,7 +28,6 @@ class MapView {
               .bindPopup(`Welcome to ${data.name.common}`)
               .openPopup();
           } else {
-            // Ako mapa postoji, samo postavlja novi marker
             L.marker([latitude, longitude])
               .addTo(this.map)
               .bindPopup(`Welcome to ${data.name.common}`)

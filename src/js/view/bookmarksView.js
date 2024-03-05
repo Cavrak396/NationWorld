@@ -66,7 +66,9 @@ class BookmarkView extends View {
                     <span class="header__bookmarks-region">${bookmark.region}</span>
                 </div>
             </a>
-            <span class="header__bookmarks-delete js-delete-bookmark">x</span>
+            <span class="header__bookmarks-delete js-delete-bookmark">
+            <img src="images/close.png" class="header__bookmarks-close"> 
+            </span>
         </li>
     `;
 

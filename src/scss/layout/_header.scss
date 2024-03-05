@@ -64,7 +64,6 @@
   }
 }
 
-// Move letter
 .showBookmark {
   opacity: 1;
   display: block;
@@ -95,6 +94,11 @@
   align-items: center;
 }
 
+.header__bookmarks-tags {
+  max-width: 80px;
+  flex: 1 1 80px;
+}
+
 .header__bookmarks-link {
   display: flex;
   justify-content: space-between;
@@ -104,6 +108,7 @@
   flex: 1 1 90%;
   border-bottom: 1px solid $black;
   padding: 0 20px 9px 20px;
+  color: $black;
 
   @include hover {
     opacity: 0.7;
@@ -114,7 +119,6 @@
 .header__bookmarks-delete {
   max-width: 10%;
   flex: 1 1 10%;
-  color: $black;
   font-size: 20px;
   font-weight: $semi;
 
@@ -123,6 +127,11 @@
     opacity: 0.2;
     transition: $regular;
   }
+}
+
+.header__bookmarks-close {
+  max-width: 15px;
+  max-height: 15px;
 }
 
 .header__bookmarks-flag {

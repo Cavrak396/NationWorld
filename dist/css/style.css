@@ -218,77 +218,6 @@ button {
   max-width: 1500px;
 }
 
-.usersetup {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(16, 12, 20);
-  top: 0;
-  left: 0;
-  z-index: 20;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.usersetup::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 15;
-  background-color: rgb(16, 12, 20);
-  opacity: 0.3;
-}
-
-.usersetup__holder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
-  text-align: center;
-  max-width: 378px;
-  z-index: 20;
-}
-
-.usersetup__text {
-  font-size: 37px;
-  font-weight: 900;
-  line-height: 50px;
-  margin: 0 auto 20px auto;
-}
-
-.usersetup__name,
-.usersetup__country {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 15px 20px;
-  border-radius: 25px;
-  margin-bottom: 13px;
-  border: solid 2px rgb(255, 255, 255);
-  font-size: 17px;
-}
-.usersetup__name:hover,
-.usersetup__country:hover {
-  transition: 0.2s all ease-in-out;
-  cursor: pointer;
-  border: solid 2px rgb(53, 92, 125);
-}
-
-.usersetup__button {
-  border-radius: 20px;
-  padding: 13px 20px;
-  border: none;
-}
-.usersetup__button:hover {
-  transition: 0.2s all ease-in-out;
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
 .header {
   position: sticky;
   top: 0;
@@ -387,6 +316,11 @@ button {
   align-items: center;
 }
 
+.header__bookmarks-tags {
+  max-width: 80px;
+  flex: 1 1 80px;
+}
+
 .header__bookmarks-link {
   display: flex;
   justify-content: space-between;
@@ -396,6 +330,7 @@ button {
   flex: 1 1 90%;
   border-bottom: 1px solid rgb(16, 12, 20);
   padding: 0 20px 9px 20px;
+  color: rgb(16, 12, 20);
 }
 .header__bookmarks-link:hover {
   opacity: 0.7;
@@ -405,7 +340,6 @@ button {
 .header__bookmarks-delete {
   max-width: 10%;
   flex: 1 1 10%;
-  color: rgb(16, 12, 20);
   font-size: 20px;
   font-weight: 600;
 }
@@ -413,6 +347,11 @@ button {
   cursor: pointer;
   opacity: 0.2;
   transition: 0.2s all ease-in-out;
+}
+
+.header__bookmarks-close {
+  max-width: 15px;
+  max-height: 15px;
 }
 
 .header__bookmarks-flag {
@@ -484,6 +423,10 @@ button {
   background-color: rgba(16, 12, 20, 0.9);
   min-height: 100vh;
   color: rgb(255, 255, 255);
+}
+
+.nation__header {
+  display: none;
 }
 
 .nation__empty-text {

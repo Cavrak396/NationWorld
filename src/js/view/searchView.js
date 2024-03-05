@@ -5,20 +5,12 @@ class SearchView extends View {
   searchBar = document.querySelector(".js-search-country");
   neighbour = document.querySelector(".js-neighbour");
 
-  /*_addHandlerRender(handler) {
-    ["hashchange", "load"].forEach((e) => window.addEventListener(e, handler));
-  }*/
-
   _addHandlerRender(handler) {
-    const events = ["hashchange", "load"];
-
-    // Dodajemo "hashchange" događaj
     window.addEventListener("hashchange", () => {
       location.reload();
       handler();
     });
 
-    // Dodajemo "load" događaj
     window.addEventListener("load", handler);
   }
 
@@ -43,7 +35,7 @@ class SearchView extends View {
     this.parentEl.style.display = data ? "block" : "none";
     this.mapField.style.display = data ? "block" : "none";
     this.emptySign.textContent = data
-      ? ""
+      ? "Loading..."
       : `Country with this name doesn't exist! Try another :)`;
     this.emptySign.style.display = data ? "none" : "block";
   }

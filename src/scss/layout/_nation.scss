@@ -4,6 +4,10 @@
   color: $white;
 }
 
+.nation__header {
+  display: none;
+}
+
 .nation__empty-text {
   position: absolute;
   top: 50%;
