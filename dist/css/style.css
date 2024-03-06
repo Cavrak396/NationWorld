@@ -349,11 +349,6 @@ button {
   transition: 0.2s all ease-in-out;
 }
 
-.header__bookmarks-close {
-  max-width: 15px;
-  max-height: 15px;
-}
-
 .header__bookmarks-flag {
   max-width: 50px;
   flex: 1 1 50px;
@@ -407,22 +402,11 @@ button {
   }
 }
 
-.header__search-button {
-  padding: 9px 17px;
-  font-weight: 600;
-  background-color: rgb(255, 255, 255);
-  color: rgb(16, 12, 20);
-}
-.header__search-button:hover {
-  cursor: pointer;
-  opacity: 0.8;
-  transition: 0.2s all ease-in-out;
-}
-
 .nation {
   background-color: rgba(16, 12, 20, 0.9);
   min-height: 100vh;
   color: rgb(255, 255, 255);
+  padding-top: 20px;
 }
 
 .nation__header {
@@ -445,6 +429,8 @@ button {
 .nation__informations {
   max-width: 890px;
   margin: 0 auto;
+  background-color: rgb(33, 33, 33);
+  border-radius: 20px 20px 0 0;
 }
 
 .nation__informations-text {
@@ -461,6 +447,7 @@ button {
   position: relative;
   width: 100%;
   min-height: 350px;
+  border-radius: 20px 20px 0 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -475,6 +462,7 @@ button {
   z-index: 15;
   background-color: rgb(16, 12, 20);
   opacity: 0.5;
+  border-radius: 20px 20px 0 0;
 }
 @media screen and (max-width: 767px) {
   .nation__informations-flag {
@@ -507,10 +495,6 @@ button {
   .nation__informations-region {
     font-size: 15px;
   }
-}
-
-.nation__informations-save {
-  margin: 0 auto;
 }
 
 .nation__informations-heading {
@@ -620,4 +604,30 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
+
+.header__bookmarks-close {
+  max-width: 15px;
+  max-height: 15px;
+}
+
+.header__search-button {
+  padding: 9px 17px;
+  font-weight: 600;
+  background-color: rgb(255, 255, 255);
+  color: rgb(16, 12, 20);
+}
+.header__search-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s all ease-in-out;
+}
+
+.nation__informations-save {
+  margin: 0 auto;
+  font-weight: 600;
+}
+.nation__informations-save:hover {
+  transition: 0.2s all ease-in-out;
+  transform: scale(1.1);
 }

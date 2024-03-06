@@ -67,7 +67,7 @@ class BookmarkView extends View {
                 </div>
             </a>
             <span class="header__bookmarks-delete js-delete-bookmark">
-            <img src="images/close.png" class="header__bookmarks-close"> 
+            <img src="images/close.png" alt="close icon" class="header__bookmarks-close"> 
             </span>
         </li>
     `;

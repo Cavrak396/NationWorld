@@ -7,8 +7,6 @@ import mapView from "./view/mapView.js";
 const loadCountry = async function () {
   try {
     const id = window.location.hash.slice(1);
-    console.log(id);
-
     if (!id) return;
     const country = await model.loadCountryInfo(id);
 
@@ -19,8 +17,6 @@ const loadCountry = async function () {
     mapView._getCountryCoords(country);
 
     handleBookmarkAction();
-
-    console.log(country);
   } catch (err) {
     throw err;
   }

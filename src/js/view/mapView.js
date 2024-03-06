@@ -4,16 +4,12 @@ class MapView {
 
   _getCountryCoords(data) {
     this.data = data;
-    console.log(data);
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         () => {
           const latitude = data.latlng[0];
           const longitude = data.latlng[1];
-          console.log(
-            `https://www.google.com/maps/@${latitude},${longitude},13z?entry=ttu`
-          );
 
           if (!this.map) {
             this.map = L.map("map").setView([latitude, longitude], 8);

@@ -2,6 +2,7 @@
   background-color: $lightBlack;
   min-height: 100vh;
   color: $white;
+  padding-top: 20px;
 }
 
 .nation__header {
@@ -24,6 +25,8 @@
 .nation__informations {
   max-width: 890px;
   margin: 0 auto;
+  background-color: $mainBlack;
+  border-radius: 20px 20px 0 0;
 }
 
 .nation__informations-text {
@@ -40,6 +43,7 @@
   position: relative;
   width: 100%;
   min-height: 350px;
+  border-radius: 20px 20px 0 0;
 
   @include background;
 
@@ -47,6 +51,7 @@
     @include darker;
     background-color: $black;
     opacity: 0.5;
+    border-radius: 20px 20px 0 0;
   }
 
   @include phone {
@@ -77,10 +82,6 @@
   @include phone {
     font-size: 15px;
   }
-}
-
-.nation__informations-save {
-  margin: 0 auto;
 }
 
 .nation__informations-heading {

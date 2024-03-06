@@ -129,11 +129,6 @@
   }
 }
 
-.header__bookmarks-close {
-  max-width: 15px;
-  max-height: 15px;
-}
-
 .header__bookmarks-flag {
   max-width: 50px;
   flex: 1 1 50px;
@@ -180,18 +175,5 @@
 
   @include phone {
     width: 140px;
-  }
-}
-
-.header__search-button {
-  padding: 9px 17px;
-  font-weight: $semi;
-  background-color: $white;
-  color: $black;
-
-  @include hover {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: $regular;
   }
 }

@@ -4,7 +4,7 @@ class CountryInfoView extends View {
   _generateMarkup(data) {
     this.data = data;
     const markup = `
-    <div class="nation__informations-flag js-country-flag" style="background-image: url('${
+    <div class="nation__informations-flag js-country-flag" alt="country flag" style="background-image: url('${
       data.flags.png
     }')">
     </div>

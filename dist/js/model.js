@@ -21,6 +21,6 @@ export const loadCountryInfo = async function (countryName) {
     }
     return countryInfo;
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
